@@ -1,0 +1,94 @@
+2026-04-16 03:38:47,927 [INFO] Database ready at: C:\Users\shiva\file_monitor_log.db
+2026-04-16 03:38:47,927 [INFO] ==================================================
+2026-04-16 03:38:47,927 [INFO]   FILE MONITOR STARTED
+2026-04-16 03:38:47,927 [INFO]   Watching:     C:\Users\shiva\Downloads\incoming
+2026-04-16 03:38:47,927 [INFO]   Destination:  C:\Users\shiva\OneDrive\ProcessedFiles
+2026-04-16 03:38:47,927 [INFO]   Watching for: {'.pdf', '.csv'}
+2026-04-16 03:38:47,927 [INFO]   Press Ctrl+C to stop.
+2026-04-16 03:38:47,927 [INFO] ==================================================
+2026-04-16 03:42:47,956 [INFO] New file detected: Project proposal (1).pdf
+2026-04-16 03:53:09,563 [INFO] Stopping file monitor...
+2026-04-16 03:53:09,563 [INFO] File monitor stopped.
+2026-04-16 03:54:23,171 [INFO] Database ready at: C:\Users\shiva\file_monitor_log.db
+2026-04-16 03:54:23,171 [INFO] ==================================================
+2026-04-16 03:54:23,172 [INFO]   FILE MONITOR STARTED
+2026-04-16 03:54:23,172 [INFO]   Watching:     C:\Users\shiva\Downloads\incoming
+2026-04-16 03:54:23,172 [INFO]   Destination:  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles
+2026-04-16 03:54:23,172 [INFO]   Watching for: {'.pdf', '.csv'}
+2026-04-16 03:54:23,172 [INFO]   Press Ctrl+C to stop.
+2026-04-16 03:54:23,172 [INFO] ==================================================
+2026-04-16 03:56:10,850 [INFO] New file detected: Lab_05-1.pdf
+2026-04-16 03:56:11,865 [INFO] Moved: Lab_05-1.pdf  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\16-04-26_03-56-11_Lab_05-1.pdf
+2026-04-16 03:56:11,870 [INFO] Logged to DB: Lab_05-1.pdf -> 16-04-26_03-56-11_Lab_05-1.pdf
+2026-04-16 03:57:02,747 [INFO] New file detected: AssingmentAnswersCOMP604_Shivani_23207535.pdf
+2026-04-16 03:57:03,751 [INFO] Moved: AssingmentAnswersCOMP604_Shivani_23207535.pdf  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\16-04-26_03-57-03_AssingmentAnswersCOMP604_Shivani_23207535.pdf
+2026-04-16 03:57:03,766 [INFO] Logged to DB: AssingmentAnswersCOMP604_Shivani_23207535.pdf -> 16-04-26_03-57-03_AssingmentAnswersCOMP604_Shivani_23207535.pdf
+2026-04-16 03:57:23,034 [INFO] Stopping file monitor...
+2026-04-16 03:57:23,034 [INFO] File monitor stopped.
+2026-04-16 03:57:32,918 [INFO] Database ready at: C:\Users\shiva\file_monitor_log.db
+2026-04-16 03:57:32,918 [INFO] ==================================================
+2026-04-16 03:57:32,918 [INFO]   FILE MONITOR STARTED
+2026-04-16 03:57:32,918 [INFO]   Watching:     C:\Users\shiva\Downloads\incoming
+2026-04-16 03:57:32,918 [INFO]   Destination:  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles
+2026-04-16 03:57:32,918 [INFO]   Watching for: {'.pdf', '.csv'}
+2026-04-16 03:57:32,918 [INFO]   Press Ctrl+C to stop.
+2026-04-16 03:57:32,918 [INFO] ==================================================
+2026-04-16 03:57:49,814 [INFO] New file detected: Comp726_ReflectiveEssay.pdf
+2026-04-16 03:57:50,817 [INFO] Moved: Comp726_ReflectiveEssay.pdf  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\16-04-26_03-57-50_Comp726_ReflectiveEssay.pdf
+2026-04-16 03:57:50,834 [INFO] Logged to DB: Comp726_ReflectiveEssay.pdf -> 16-04-26_03-57-50_Comp726_ReflectiveEssay.pdf
+2026-04-16 04:09:48,231 [INFO] Database ready at: C:\Users\shiva\file_monitor_log.db
+2026-04-16 04:09:48,231 [INFO] ==================================================
+2026-04-16 04:09:48,231 [INFO]   FILE MONITOR STARTED
+2026-04-16 04:09:48,231 [INFO]   Watching:     C:\Users\shiva\Downloads\incoming
+2026-04-16 04:09:48,231 [INFO]   Destination:  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles
+2026-04-16 04:09:48,231 [INFO]   Watching for: {'.csv', '.pdf'}
+2026-04-16 04:09:48,231 [INFO]   Press Ctrl+C to stop.
+2026-04-16 04:09:48,231 [INFO] ==================================================
+2026-04-16 04:10:07,781 [INFO] New file detected: Q3-FIFO-3frames.csv
+2026-04-16 04:10:08,785 [INFO] Moved: Q3-FIFO-3frames.csv  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\16-04-26_04-10-08_Q3-FIFO-3frames.csv
+2026-04-16 04:10:08,801 [INFO] Logged to DB: Q3-FIFO-3frames.csv -> 16-04-26_04-10-08_Q3-FIFO-3frames.csv
+2026-04-16 13:54:34,154 [INFO] Database ready at: C:\Users\shiva\file_monitor_log.db
+2026-04-16 13:54:34,154 [INFO] ==================================================
+2026-04-16 13:54:34,154 [INFO]   FILE MONITOR STARTED
+2026-04-16 13:54:34,154 [INFO]   Watching:     C:\Users\shiva\Downloads\incoming
+2026-04-16 13:54:34,154 [INFO]   Destination:  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles
+2026-04-16 13:54:34,159 [INFO]   Watching for: {'.csv', '.pdf'}
+2026-04-16 13:54:34,159 [INFO]   Press Ctrl+C to stop.
+2026-04-16 13:54:34,159 [INFO] ==================================================
+2026-04-16 13:54:56,879 [INFO] New file detected: Permanent residence.pdf
+2026-04-16 13:54:57,892 [INFO] Moved: Permanent residence.pdf  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\16-04-26_13-54-57_Permanent residence.pdf
+2026-04-16 13:54:57,913 [INFO] Logged to DB: Permanent residence.pdf -> 16-04-26_13-54-57_Permanent residence.pdf
+2026-04-16 13:55:45,806 [INFO] New file detected: Shivani_23207535_W201A.pdf
+2026-04-16 13:55:46,817 [INFO] Moved: Shivani_23207535_W201A.pdf  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\16-04-26_13-55-46_Shivani_23207535_W201A.pdf
+2026-04-16 13:55:46,855 [INFO] Logged to DB: Shivani_23207535_W201A.pdf -> 16-04-26_13-55-46_Shivani_23207535_W201A.pdf
+2026-04-16 13:57:47,416 [INFO] New file detected: project_report_requirements.pdf
+2026-04-16 13:57:48,423 [INFO] Moved: project_report_requirements.pdf  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\16-04-26_13-57-48_project_report_requirements.pdf
+2026-04-16 13:57:48,440 [INFO] Logged to DB: project_report_requirements.pdf -> 16-04-26_13-57-48_project_report_requirements.pdf
+2026-05-25 12:10:28,936 [INFO] Database ready at: C:\Users\shiva\file_monitor_log.db
+2026-05-25 12:10:28,936 [INFO] ==================================================
+2026-05-25 12:10:28,939 [INFO]   FILE MONITOR STARTED
+2026-05-25 12:10:28,939 [INFO]   Watching:     C:\Users\shiva\Downloads\incoming
+2026-05-25 12:10:28,939 [INFO]   Destination:  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles
+2026-05-25 12:10:28,940 [INFO]   Watching for: {'.csv', '.pdf'}
+2026-05-25 12:10:28,940 [INFO]   Press Ctrl+C to stop.
+2026-05-25 12:10:28,940 [INFO] ==================================================
+2026-05-25 12:11:11,036 [INFO] New file detected: Week 01-Introduction-a9799a5f-1812-4580-9bac-6aaa7d53f227.pdf
+2026-05-25 12:11:12,155 [INFO] Moved: Week 01-Introduction-a9799a5f-1812-4580-9bac-6aaa7d53f227.pdf  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\25-05-26_12-11-12_Week 01-Introduction-a9799a5f-1812-4580-9bac-6aaa7d53f227.pdf
+2026-05-25 12:11:12,160 [INFO] Logged to DB: Week 01-Introduction-a9799a5f-1812-4580-9bac-6aaa7d53f227.pdf -> 25-05-26_12-11-12_Week 01-Introduction-a9799a5f-1812-4580-9bac-6aaa7d53f227.pdf
+2026-05-25 12:12:34,853 [INFO] New file detected: COMP705_L10_Robotic_Computing_.pdf
+2026-05-25 12:12:36,453 [INFO] Moved: COMP705_L10_Robotic_Computing_.pdf  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\25-05-26_12-12-35_COMP705_L10_Robotic_Computing_.pdf
+2026-05-25 12:12:36,469 [INFO] Logged to DB: COMP705_L10_Robotic_Computing_.pdf -> 25-05-26_12-12-35_COMP705_L10_Robotic_Computing_.pdf
+2026-05-25 17:07:52,232 [INFO] Database ready at: C:\Users\shiva\file_monitor_log.db
+2026-05-25 17:07:52,233 [INFO] ==================================================
+2026-05-25 17:07:52,234 [INFO]   FILE MONITOR STARTED
+2026-05-25 17:07:52,235 [INFO]   Watching:     C:\Users\shiva\Downloads\incoming
+2026-05-25 17:07:52,236 [INFO]   Destination:  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles
+2026-05-25 17:07:52,239 [INFO]   Watching for: {'.pdf', '.csv'}
+2026-05-25 17:07:52,241 [INFO]   Press Ctrl+C to stop.
+2026-05-25 17:07:52,245 [INFO] ==================================================
+2026-05-25 17:20:14,971 [INFO] New file detected: COMP705_L3__Chatbots-4.pdf
+2026-05-25 17:20:16,501 [INFO] Moved: COMP705_L3__Chatbots-4.pdf  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\25-05-26_17-20-15_COMP705_L3__Chatbots-4.pdf
+2026-05-25 17:20:16,515 [INFO] Logged to DB: COMP705_L3__Chatbots-4.pdf -> 25-05-26_17-20-15_COMP705_L3__Chatbots-4.pdf
+2026-05-25 17:23:03,786 [INFO] New file detected: lab_07-4.pdf
+2026-05-25 17:23:04,791 [INFO] Moved: lab_07-4.pdf  ->  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles\25-05-26_17-23-04_lab_07-4.pdf
+2026-05-25 17:23:04,807 [INFO] Logged to DB: lab_07-4.pdf -> 25-05-26_17-23-04_lab_07-4.pdf
