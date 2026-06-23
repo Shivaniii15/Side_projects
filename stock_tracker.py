@@ -3,25 +3,27 @@ import yfinance as yf
 
 
 # -----------------------------
-# CONFIG (fill later)
+# CONFIG
 # -----------------------------
 STOCKS = ["AAPL", "GOOGL", "TSLA"]
 
 BUY_PRICES = {
-    "AAPL": 150.0,
-    "GOOGL": 2500.0,
+    "AAPL": 100.0,
+    "GOOGL": 3000.0,
     "TSLA": 700.0
 }
 
 # -----------------------------
-# FETCH PRICE (placeholder)
+# FETCH PRICE 
 # -----------------------------
 def get_stock_price(symbol):
 
     """Fetch the current stock price using yfinance"""
+    #connection to yahoo finance API.
     stock = yf.Ticker(symbol)
     
-    # Get current price from the last trading day
+    """Get current price from the last trading day"""
+    #history(period="1d") gets today's data, and "Close" gives the closing price. iloc[-1] gets the latest price.
     current_price = stock.history(period="1d")["Close"].iloc[-1];
     return current_price
 
@@ -44,7 +46,7 @@ def main():
         current_price = get_stock_price(stock)
         pnl = calculate_profit_loss(stock, current_price)
 
-        print(f"{stock}: Current Price = {current_price}, P/L = {pnl}")
+        print(f"{stock}: Current Price = {current_price: .2f}, P/L = {pnl: .2f}")
 
 
 if __name__ == "__main__":
