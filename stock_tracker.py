@@ -13,17 +13,17 @@ BUY_PRICES = {
     "TSLA": 700.0
 }
 
-API_URL = "https://api.example.com/stock"  # replace later
-
-
 # -----------------------------
 # FETCH PRICE (placeholder)
 # -----------------------------
 def get_stock_price(symbol):
-    
-    stock = yf.Ticker(symbol)
 
-    return 0  # placeholder
+    """Fetch the current stock price using yfinance"""
+    stock = yf.Ticker(symbol)
+    
+    # Get current price from the last trading day
+    current_price = stock.history(period="1d")["Close"].iloc[-1];
+    return current_price
 
 
 # -----------------------------
