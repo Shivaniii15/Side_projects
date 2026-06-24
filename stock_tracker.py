@@ -9,7 +9,7 @@ import pandas as pd #handles data perfectly in tabular data. easy to export to e
 
 
 #price is shown in usd because API return prices in native exchange currency of the stock. 
-STOCKS = ["AAPL", "GOOGL", "TSLA", "AMZN", "MSFT", "NKE", "FB"]
+STOCKS = ["AAPL", "GOOGL", "TSLA", "AMZN", "MSFT", "NKE", "META"]
 
 BUY_PRICES = {
     "AAPL": 100.0,
@@ -18,7 +18,7 @@ BUY_PRICES = {
     "AMZN": 300.0,
     "MSFT": 250.0,
     "NKE": 150.0,
-    "FB": 350.0
+    "META": 350.0
 }
 
 # -----------------------------
