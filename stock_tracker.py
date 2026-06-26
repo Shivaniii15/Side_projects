@@ -80,6 +80,8 @@ for stock in STOCKS:
 })
 
 df = pd.DataFrame(data)
+total_pnl = df["P/L"].sum()
+df.loc[len(df.index)] = ["Total", None, None, round(total_pnl, 2)]  # Add a total row at the end
 
 #make the excel file and save it to the current directory.
 #overwrites existing one
