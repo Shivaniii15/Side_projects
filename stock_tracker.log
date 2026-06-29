@@ -1,0 +1,12 @@
+2026-06-30 00:47:31,039 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: METAA"}}}
+2026-06-30 00:47:31,931 - ERROR - $METAA: possibly delisted; no price data found  (period=1d) (Yahoo error = "No data found, symbol may be delisted")
+2026-06-30 00:47:31,932 - WARNING - No data found for METAA.
+2026-06-30 00:47:31,933 - INFO - Skipping METAA due to missing data.
+2026-06-30 00:47:32,215 - INFO - Excel report generated: stock_tracker.xlsx
+
+2026-06-30 00:48:44,234 - ERROR - HTTP Error 404: {"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"Quote not found for symbol: METAA"}}}
+2026-06-30 00:48:45,420 - ERROR - $METAA: possibly delisted; no price data found  (period=1d) (Yahoo error = "No data found, symbol may be delisted")
+2026-06-30 00:48:45,421 - WARNING - No data found for METAA.
+2026-06-30 00:48:45,422 - INFO - Skipping METAA due to missing data.
+2026-06-30 00:48:45,660 - INFO - Excel report generated: stock_tracker.xlsx
+

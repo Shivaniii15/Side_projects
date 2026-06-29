@@ -1,3 +1,10 @@
+"""
+A Python tool that fetches real-time stock prices for a predefined list of tickers, 
+calculates profit/loss based on hardcoded buy prices, and exports the results into a clean csv report.
+Developed by: Shivani 
+"""
+
+import logging
 import yfinance as yf
 import pandas as pd #handles data perfectly in tabular data. easy to export to excel.
 
@@ -7,8 +14,15 @@ import pandas as pd #handles data perfectly in tabular data. easy to export to e
 # -----------------------------
 
 
+logging.basicConfig(
+    filename='stock_tracker.log',
+    level=logging.INFO,
+    format="%(asctime)s - %(levelname)s - %(message)s"
+)
+
+
 #price is shown in usd because API return prices in native exchange currency of the stock. 
-STOCKS = ["AAPL", "GOOGL", "TSLA", "AMZN", "MSFT", "NKE", "META"]
+STOCKS = ["AAPL", "GOOGL", "TSLA", "AMZN", "MSFT", "NKE", "METAA"]
 
 BUY_PRICES = {
     "AAPL": 100.0,
@@ -17,7 +31,7 @@ BUY_PRICES = {
     "AMZN": 300.0,
     "MSFT": 250.0,
     "NKE": 150.0,
-    "META": 350.0
+    "METAA": 350.0
 }
 
 # -----------------------------
@@ -32,21 +46,21 @@ def get_stock_price(symbol):
 
         history = stock.history(period="1d")
 
-        #if data is not found, return 0 and print a message.
+        #if data is not found, return 0 and logging.warning a message.
         if history.empty:
-            print(f"No data found for {symbol}.")
+            logging.warning(f"No data found for {symbol}.")
             return 0
-
+        
+        """Get current price from the last trading day"""
+        #history(period="1d") gets today's data, and "Close" gives the closing price. iloc[-1] gets the latest price.
+        current_price = history["Close"].iloc[-1]
+        return current_price
+    
     except Exception as e:
-        print(f"Error fetching data for {symbol}: {e}")
+        logging.error(f"Error fetching data for {symbol}: {e}")
         return 0
 
-    """Get current price from the last trading day"""
-    #history(period="1d") gets today's data, and "Close" gives the closing price. iloc[-1] gets the latest price.
-    current_price = stock.history(period="1d")["Close"].iloc[-1];
-    return current_price
 
-    
 # -----------------------------
 # CALCULATE P/L
 # -----------------------------
@@ -67,7 +81,7 @@ for stock in STOCKS:
     current_price = get_stock_price(stock)
 
     if current_price == 0:
-        print(f"Skipping {stock} due to missing data.")
+        logging.info(f"Skipping {stock} due to missing data.")
         continue
 
     pnl = calculate_profit_loss(stock, current_price)
@@ -89,7 +103,8 @@ df.to_excel("stock_tracker.xlsx", index=False)
 
 
 def main():
-    print("Excel report generated: stock_tracker.xlsx\n")
+    print("Stock Tracker Report Generated: stock_tracker.xlsx")
+    logging.info("Excel report generated: stock_tracker.xlsx\n")
 
 if __name__ == "__main__":
     main()
