@@ -60,7 +60,7 @@ STOCKS = list(BUY_PRICES.keys())
 if not STOCKS:
     logging.error("No stocks loaded. Please check the stocks.txt file.")
     exit(1)
-    
+
 if not BUY_PRICES:
     logging.error("No buy prices loaded. Please check the stocks.txt file.")
     exit(1)
@@ -131,14 +131,14 @@ df = pd.DataFrame(data)
 total_pnl = df["P/L"].sum()
 df.loc[len(df.index)] = ["Total", None, None, round(total_pnl, 2)]  # Add a total row at the end
 
-#make the excel file and save it to the current directory.
+#make the csv file and save it to the current directory.
 #overwrites existing one
-df.to_excel("stock_tracker.xlsx", index=False)
+df.to_csv("stock_tracker.csv", index=False)
 
 
 def main():
-    print("Stock Tracker Report Generated: stock_tracker.xlsx")
-    logging.info("Excel report generated: stock_tracker.xlsx\n")
+    print("Stock Tracker Report Generated: stock_tracker.csv")
+    logging.info("CSV report generated: stock_tracker.csv\n")
 
 if __name__ == "__main__":
     main()
