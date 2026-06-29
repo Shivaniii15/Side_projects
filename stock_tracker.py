@@ -22,21 +22,55 @@ logging.basicConfig(
 
 
 #price is shown in usd because API return prices in native exchange currency of the stock. 
-STOCKS = ["AAPL", "GOOGL", "TSLA", "AMZN", "MSFT", "NKE", "METAA"]
 
-BUY_PRICES = {
-    "AAPL": 100.0,
-    "GOOGL": 3000.0,
-    "TSLA": 700.0,
-    "AMZN": 300.0,
-    "MSFT": 250.0,
-    "NKE": 150.0,
-    "METAA": 350.0
-}
+def load_portfolio(filename):
+    portfolio = {}
+
+    try:
+        with open(filename, "r") as file:
+            for line in file:
+                line = line.strip()
+
+                if not line:
+                    continue
+
+                parts = line.split(",")
+
+                if len(parts) != 2:
+                    logging.warning(f"Invalid line: {line}")
+                    continue
+
+                symbol = parts[0].strip()
+                try:
+                    price = float(parts[1].strip())
+                except ValueError:
+                    logging.error(f"Invalid price for {symbol}")
+                    continue
+
+                portfolio[symbol] = price
+
+    except FileNotFoundError:
+        logging.error(f"File not found: {filename}")
+
+    return portfolio
+
+BUY_PRICES = load_portfolio(filename="stocks.txt")
+STOCKS = list(BUY_PRICES.keys())
+
+if not STOCKS:
+    logging.error("No stocks loaded. Please check the stocks.txt file.")
+    exit(1)
+    
+if not BUY_PRICES:
+    logging.error("No buy prices loaded. Please check the stocks.txt file.")
+    exit(1)
+
+
 
 # -----------------------------
 # FETCH PRICE 
 # -----------------------------
+
 def get_stock_price(symbol):
 
     """Fetch the current stock price using yfinance"""
