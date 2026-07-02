@@ -7,6 +7,9 @@ Developed by: Shivani
 import logging
 import yfinance as yf
 import pandas as pd #handles data perfectly in tabular data. easy to export to excel.
+from datetime import datetime
+import os
+
 
 
 # -----------------------------
@@ -108,8 +111,12 @@ def calculate_profit_loss(symbol, current_price):
 # MAIN LOGIC
 # -----------------------------
 
-#store data in a list
-data = []
+
+row = {
+    "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+}
+
+total_pnl = 0
 
 for stock in STOCKS:
     current_price = get_stock_price(stock)
@@ -118,27 +125,35 @@ for stock in STOCKS:
         logging.info(f"Skipping {stock} due to missing data.")
         continue
 
+    buy_price = BUY_PRICES[stock]
+
     pnl = calculate_profit_loss(stock, current_price)
 
-    data.append({
-        "Stock": stock,
-        "Buy Price": BUY_PRICES.get(stock, 0),
-        "Current Price": round(current_price, 2),
-        "P/L": round(pnl, 2)
-})
+    total_pnl += pnl
+    
+    row[f"{stock}_Buy"] = round(buy_price, 2)
+    row[f"{stock}_Current"] = round(current_price, 2)
+    row[f"{stock}_P/L"] = round(pnl, 2)
 
-df = pd.DataFrame(data)
-total_pnl = df["P/L"].sum()
-df.loc[len(df.index)] = ["Total", None, None, round(total_pnl, 2)]  # Add a total row at the end
+row ["Total P/L"] = round(total_pnl, 2)
 
-#make the csv file and save it to the current directory.
-#overwrites existing one
-df.to_csv("stock_tracker.csv", index=False)
+#-----------------------------
+# EXPORT TO CSV
+#-----------------------------
+
+
+df = pd.DataFrame([row], index=[0])
+
+#checks if the file already exists
+file_exists = os.path.isfile("new_stock_tracker.csv")
+
+#append data
+df.to_csv("new_stock_tracker.csv", index=False, mode='a', header=not file_exists)
 
 
 def main():
-    print("Stock Tracker Report Generated: stock_tracker.csv")
-    logging.info("CSV report generated: stock_tracker.csv\n")
+    print("Stock Tracker Report Generated: new_stock_tracker.csv")
+    logging.info("CSV report generated: new_stock_tracker.csv\n")
 
 if __name__ == "__main__":
     main()
