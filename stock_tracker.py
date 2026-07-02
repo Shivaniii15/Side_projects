@@ -111,49 +111,58 @@ def calculate_profit_loss(symbol, current_price):
 # MAIN LOGIC
 # -----------------------------
 
+data = []
 
-row = {
-    "Timestamp": datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-}
-
-total_pnl = 0
+timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
 for stock in STOCKS:
+
     current_price = get_stock_price(stock)
 
     if current_price == 0:
-        logging.info(f"Skipping {stock} due to missing data.")
+        logging.warning(f"Skipping {stock} due to missing data.")
         continue
 
     buy_price = BUY_PRICES[stock]
 
-    pnl = calculate_profit_loss(stock, current_price)
+    pnl = current_price - buy_price
 
-    total_pnl += pnl
-    
-    row[f"{stock}_Buy"] = round(buy_price, 2)
-    row[f"{stock}_Current"] = round(current_price, 2)
-    row[f"{stock}_P/L"] = round(pnl, 2)
-
-row ["Total P/L"] = round(total_pnl, 2)
+    data.append({
+        "Timestamp": timestamp,
+        "Stock": stock,
+        "Buy Price": round(buy_price, 2),
+        "Current Price": round(current_price, 2),
+        "P/L": round(pnl, 2)
+    })
 
 #-----------------------------
 # EXPORT TO CSV
 #-----------------------------
 
+df = pd.DataFrame(data)
 
-df = pd.DataFrame([row], index=[0])
+#one clean row per stock per run
+data_file = "stock_data.csv"
+data_exists = os.path.isfile(data_file)
+df.to_csv(data_file, index=False, mode='a', header=not data_exists)
 
-#checks if the file already exists
-file_exists = os.path.isfile("new_stock_tracker.csv")
+#one row per run, total pnl only
+total_pnl = sum(item["P/L"] for item in data)
+summary_file = "stock_summary.csv"
+summary_exists = os.path.isfile(summary_file)
 
-#append data
-df.to_csv("new_stock_tracker.csv", index=False, mode='a', header=not file_exists)
+summary_df = pd.DataFrame([{
+    "Timestamp": timestamp,
+    "Total P/L": round(total_pnl, 2)
+}])
+
+summary_df.to_csv(summary_file, index=False, mode='a', header=not summary_exists)
+print(f"Summary saved to: {os.path.abspath(summary_file)}")
 
 
 def main():
-    print("Stock Tracker Report Generated: new_stock_tracker.csv")
-    logging.info("CSV report generated: new_stock_tracker.csv\n")
+    print("Stock Tracker Report Generated: stock_data.csv and stock_summary.csv")
+    logging.info("CSV report generated: stock_data.csv and stock_summary.csv\n")
 
 if __name__ == "__main__":
     main()
