@@ -9,6 +9,7 @@ import yfinance as yf
 import pandas as pd #handles data perfectly in tabular data. easy to export to excel.
 from datetime import datetime
 import os
+import time
 
 
 
@@ -165,4 +166,7 @@ def main():
     logging.info("CSV report generated: stock_data.csv and stock_summary.csv\n")
 
 if __name__ == "__main__":
-    main()
+    while True:
+        main()
+        logging.info("Waiting 10 seconds before next run...")
+        time.sleep(10)
