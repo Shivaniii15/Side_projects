@@ -7,6 +7,11 @@ st.title("Portfolio Tracker")
 df = pd.read_csv("stock_data.csv")
 summary_df = pd.read_csv("stock_summary.csv")
 
+df["Buy Price"] = df["Buy Price"].round(2)
+df["Current Price"] = df["Current Price"].round(2)
+df["P/L"] = df["P/L"].round(2)
+summary_df["Total P/L"] = summary_df["Total P/L"].round(2)
+
 # Convert timestamps
 df["Timestamp"] = pd.to_datetime(df["Timestamp"])
 summary_df["Timestamp"] = pd.to_datetime(summary_df["Timestamp"])
@@ -27,7 +32,8 @@ def colour_pnl(val):
 
 st.dataframe(
     latest_df[["Stock", "Buy Price", "Current Price", "P/L"]]
-    .style.map(colour_pnl, subset=["P/L"]),
+    .style.map(colour_pnl, subset=["P/L"])
+    .format({"Buy Price": "{:.2f}", "Current Price": "{:.2f}", "P/L": "{:.2f}"}),
     use_container_width=True
 )
 

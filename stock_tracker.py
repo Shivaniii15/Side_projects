@@ -111,59 +111,61 @@ def calculate_profit_loss(symbol, current_price):
 # -----------------------------
 # MAIN LOGIC
 # -----------------------------
+def main():
 
-data = []
+    data = []
 
-timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
 
-for stock in STOCKS:
+    for stock in STOCKS:
 
-    current_price = get_stock_price(stock)
+        current_price = get_stock_price(stock)
 
-    if current_price == 0:
-        logging.warning(f"Skipping {stock} due to missing data.")
-        continue
+        if current_price == 0:
+            logging.warning(f"Skipping {stock} due to missing data.")
+            continue
 
-    buy_price = BUY_PRICES[stock]
+        buy_price = BUY_PRICES[stock]
 
-    pnl = current_price - buy_price
+        pnl = current_price - buy_price
 
-    data.append({
-        "Timestamp": timestamp,
-        "Stock": stock,
-        "Buy Price": round(buy_price, 2),
-        "Current Price": round(current_price, 2),
-        "P/L": round(pnl, 2)
+        data.append({
+            "Timestamp": timestamp,
+            "Stock": stock,
+            "Buy Price": round(buy_price, 2),
+            "Current Price": round(current_price, 2),
+            "P/L": round(pnl, 2)
     })
 
 #-----------------------------
 # EXPORT TO CSV
 #-----------------------------
 
-df = pd.DataFrame(data)
+    df = pd.DataFrame(data)
 
-#one clean row per stock per run
-data_file = "stock_data.csv"
-data_exists = os.path.isfile(data_file)
-df.to_csv(data_file, index=False, mode='a', header=not data_exists)
+    #one clean row per stock per run
+    data_file = "stock_data.csv"
+    data_exists = os.path.isfile(data_file)
+    df.to_csv(data_file, index=False, mode='a', header=not data_exists)
 
 #one row per run, total pnl only
-total_pnl = sum(item["P/L"] for item in data)
-summary_file = "stock_summary.csv"
-summary_exists = os.path.isfile(summary_file)
+    total_pnl = sum(item["P/L"] for item in data)
+    summary_file = "stock_summary.csv"
+    summary_exists = os.path.isfile(summary_file)
 
-summary_df = pd.DataFrame([{
-    "Timestamp": timestamp,
-    "Total P/L": round(total_pnl, 2)
+    summary_df = pd.DataFrame([{
+        "Timestamp": timestamp,
+        "Total P/L": round(total_pnl, 2)
 }])
 
-summary_df.to_csv(summary_file, index=False, mode='a', header=not summary_exists)
-print(f"Summary saved to: {os.path.abspath(summary_file)}")
+    summary_df.to_csv(summary_file, index=False, mode='a', header=not summary_exists)
+    print(f"Summary saved to: {os.path.abspath(summary_file)}")
 
 
-def main():
+
     print("Stock Tracker Report Generated: stock_data.csv and stock_summary.csv")
     logging.info("CSV report generated: stock_data.csv and stock_summary.csv\n")
+    
 
 if __name__ == "__main__":
     while True:
