@@ -2,6 +2,7 @@
 A Python tool that fetches real-time stock prices for a predefined list of tickers, 
 calculates profit/loss based on hardcoded buy prices, and exports the results into a clean csv report.
 Developed by: Shivani 
+
 """
 
 import logging
