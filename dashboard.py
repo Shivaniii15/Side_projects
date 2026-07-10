@@ -34,7 +34,7 @@ st.dataframe(
     latest_df[["Stock", "Buy Price", "Current Price", "P/L"]]
     .style.map(colour_pnl, subset=["P/L"])
     .format({"Buy Price": "{:.2f}", "Current Price": "{:.2f}", "P/L": "{:.2f}"}),
-    use_container_width=True
+    width='stretch'
 )
 
 # Total P/L for latest run
