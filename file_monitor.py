@@ -1,5 +1,4 @@
 """
-
 FILE MONITOR — A Python Script to Watch a Folder and Move Files
 Author: Vaani :)
 
