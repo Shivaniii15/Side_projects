@@ -1,5 +1,11 @@
 import requests
 import logging
+from bs4 import BeautifulSoup
+
+url = "https://books.toscrape.com/catalogue/category/books/music_14/index.html"
+
+response = requests.get(url)
+soup = BeautifulSoup(response.text, "html.parser")
 
 logging.basicConfig(
     filename="scraper.log",
@@ -7,11 +13,19 @@ logging.basicConfig(
     format="%(asctime)s - %(levelname)s - %(message)s"
 )
 
-url = "https://books.toscrape.com/catalogue/category/books/music_14/index.html"
+books = soup.find_all("article", class_="product_pod")
 
-response = requests.get(url)
+for book in books:
+    title = book.h3.a["title"]
+    price = book.find("p", class_="price_color").text
+
+    logging.info(f"Title: {title}, Price: {price}")
+    print(f"Title: {title}, Price: {price}")
+
+books = soup.find_all("article", class_="product_pod")
+
 logging.info(f"Status Code: {response.status_code}")
-logging.info(f"Response Text (first 500 chars): {response.text[:500]}")
+logging.info(f"Number of books found: {len(books)}")
 
-print(response.status_code)
-print(response.text[:500])
+print(f"Status Code: {response.status_code}")
+print(f"Number of books found: {len(books)}")
