@@ -1,0 +1,10 @@
+2026-07-13 16:04:04,200 [INFO] Database ready at: C:\Users\shiva\file_monitor_log.db
+2026-07-13 16:04:04,200 [INFO] ==================================================
+2026-07-13 16:04:04,200 [INFO]   FILE MONITOR STARTED
+2026-07-13 16:04:04,200 [INFO]   Watching:     C:\Users\shiva\Downloads\incoming
+2026-07-13 16:04:04,200 [INFO]   Destination:  C:\Users\shiva\OneDrive - AUT University\ProcessedFiles
+2026-07-13 16:04:04,200 [INFO]   Watching for: {'.pdf', '.csv'}
+2026-07-13 16:04:04,200 [INFO]   Press Ctrl+C to stop.
+2026-07-13 16:04:04,200 [INFO] ==================================================
+2026-07-13 16:04:15,903 [INFO] Stopping file monitor...
+2026-07-13 16:04:15,910 [INFO] File monitor stopped.
